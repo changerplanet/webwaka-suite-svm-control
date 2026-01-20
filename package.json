@@ -2,7 +2,9 @@
   "name": "webwaka-suite-svm-control",
   "version": "0.1.0",
   "description": "WebWaka svm suite - control",
+  "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo 'No tests yet' && exit 0"
   }
 }
