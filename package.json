@@ -1,10 +1,17 @@
 {
   "name": "webwaka-suite-svm-control",
   "version": "0.1.0",
-  "description": "WebWaka svm suite - control",
+  "description": "WebWaka SVM Suite - Control Layer (Pure Declarative Control Package)",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo 'No tests yet' && exit 0"
-  }
+    "test": "node tests/control.test.js",
+    "start": "echo 'This is a pure data package with no runtime. Run npm test to verify declarations.'"
+  },
+  "keywords": [
+    "webwaka",
+    "svm",
+    "control",
+    "declarative"
+  ],
+  "license": "UNLICENSED"
 }

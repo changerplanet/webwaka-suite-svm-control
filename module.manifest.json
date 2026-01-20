@@ -3,12 +3,49 @@
   "class": "suite",
   "suiteType": "control",
   "version": "0.1.0",
-  "capabilities": [],
+  "capabilities": [
+    "svm:catalog.view",
+    "svm:catalog.manage",
+    "svm:order.create",
+    "svm:order.view",
+    "svm:order.cancel",
+    "svm:order.refund",
+    "svm:customer.view",
+    "svm:customer.manage",
+    "svm:reports.view",
+    "svm:settings.view",
+    "svm:settings.manage"
+  ],
+  "entitlements": [
+    "svm-access",
+    "svm-orders-enabled",
+    "svm-refunds-enabled",
+    "svm-offline-enabled",
+    "svm-advanced-reports",
+    "svm-admin"
+  ],
+  "featureFlags": [
+    "svm-enabled",
+    "svm-offline-orders",
+    "svm-guest-checkout",
+    "svm-digital-products",
+    "svm-physical-products",
+    "svm-inventory-enforced",
+    "svm-discounts-enabled"
+  ],
+  "dashboardSections": [
+    "storefront",
+    "orders",
+    "customers",
+    "reports",
+    "settings"
+  ],
   "dependencies": [],
   "metadata": {
     "repository": "https://github.com/changerplanet/webwaka-suite-svm-control",
     "suite": "svm",
     "created": "2026-01-20",
-    "status": "substrate"
+    "status": "control-layer",
+    "phase": "5C"
   }
 }

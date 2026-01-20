@@ -1,0 +1,149 @@
+Project
+
+webwaka-suite-svm-control
+
+Role
+
+You are implementing Phase 5C — SVM Control Layer for WebWaka.
+
+This is a PURE DECLARATIVE CONTROL PACKAGE.
+
+⸻
+
+🚫 STRICT PROHIBITIONS
+
+❌ No UI
+❌ No runtime logic
+❌ No pricing logic
+❌ No inventory logic
+❌ No auth logic
+❌ No API calls
+❌ No database usage
+
+This repo contains DATA ONLY.
+
+⸻
+
+🎯 OBJECTIVE
+
+Define all control declarations required for a Single Vendor Marketplace (SVM), including:
+	1.	Capabilities
+	2.	Entitlements
+	3.	Feature Flags
+	4.	Dashboard Sections + Gating Matrix
+
+All outputs must be:
+	•	Deterministic
+	•	JSON-serializable
+	•	Pure data
+	•	Test-verified
+
+⸻
+
+1️⃣ Capabilities to Define
+
+Catalog
+	•	svm:catalog.view
+	•	svm:catalog.manage
+
+Orders
+	•	svm:order.create
+	•	svm:order.view
+	•	svm:order.cancel
+	•	svm:order.refund
+
+Customers
+	•	svm:customer.view
+	•	svm:customer.manage
+
+Reports
+	•	svm:reports.view
+
+Settings
+	•	svm:settings.view
+	•	svm:settings.manage
+
+⸻
+
+2️⃣ Entitlements to Define
+
+Entitlement	Description
+svm-access	Base marketplace access
+svm-orders-enabled	Can place/manage orders
+svm-refunds-enabled	Can process refunds
+svm-offline-enabled	Offline order capture
+svm-advanced-reports	Advanced analytics
+svm-admin	Full SVM administration
+
+
+⸻
+
+3️⃣ Feature Flags to Define
+
+Flag	Default
+svm-enabled	true
+svm-offline-orders	false
+svm-guest-checkout	false
+svm-digital-products	false
+svm-physical-products	true
+svm-inventory-enforced	true
+svm-discounts-enabled	false
+
+
+⸻
+
+4️⃣ Dashboard Sections
+
+Define dashboard sections ONLY, no UI.
+
+Section	Permissions	Entitlements	Flags
+Storefront	svm:catalog.view	svm-access	svm-enabled
+Orders	svm:order.view	svm-orders-enabled	svm-enabled
+Customers	svm:customer.view	svm-access	svm-enabled
+Reports	svm:reports.view	svm-advanced-reports	svm-enabled
+Settings	svm:settings.view	svm-admin	svm-enabled
+
+
+⸻
+
+5️⃣ Hard Requirements
+	•	All declarations must be exported
+	•	No hardcoded roles
+	•	No logic functions
+	•	Fully test-covered
+	•	Snapshot-safe
+	•	Tenant-isolated
+
+⸻
+
+6️⃣ Tests Required
+
+Hard-stop test must prove:
+
+Given a tenant context, permissions, entitlements, and feature flags, the SVM control layer produces a deterministic, explainable dashboard and access matrix.
+
+	•	Determinism test (10× repeat)
+	•	JSON serialization test
+	•	No mutation test
+
+⸻
+
+🛑 HARD STOP
+
+After completion:
+
+⛔ STOP
+⛔ Do NOT implement UI
+⛔ Await explicit authorization for Phase 5C-3 (SVM UI)
+
+⸻
+
+✅ Deliverables
+	•	Control declarations
+	•	Tests (≥80% coverage)
+	•	Updated module.manifest.json
+	•	Final commit on main
+
+⸻
+
+END PROMPT
